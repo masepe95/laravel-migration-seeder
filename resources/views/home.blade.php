@@ -16,14 +16,14 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Codice treno</th>
-                <th scope="col">Azienda</th>
-                <th scope="col">Stazione di partenza</th>
-                <th scope="col">Stazione di arrivo</th>
-                <th scope="col">Orario di partenza</th>
-                <th scope="col">Orario di arrivo</th>
-                <th scope="col">Treno Cancellato</th>
-                <th scope="col">Stato</th>
+                <th scope="col">Train Number</th>
+                <th scope="col">Train Company</th>
+                <th scope="col">Departing Station</th>
+                <th scope="col">Arrival Station</th>
+                <th scope="col">Leaving Time</th>
+                <th scope="col">Arrival Time</th>
+                <th scope="col">Train Cancelled</th>
+                <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +50,7 @@
                     <td>
                         @if ($train->cancelled)
                             <strong class="text-danger">
-                                SI
+                                YES
                             </strong>
                         @else
                             <p class="text-success">
@@ -61,17 +61,17 @@
                     <td>
                         @if ($train->on_time)
                             <strong class="text-warning">
-                                IN RITARDO
+                                DELAYED
                             </strong>
                         @else
                             <p class="text-success">
-                                IN ORARIO
+                                ON TIME
                             </p>
                         @endif
                     </td>
                 </tr>
             @empty
-                <tr scope="row" class="text-danger">Nessun treno disponibile</tr>
+                <tr scope="row" class="text-danger">No Train Available</tr>
             @endforelse
         </tbody>
     </table>
